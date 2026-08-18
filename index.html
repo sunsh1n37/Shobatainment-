@@ -61,6 +61,7 @@ section{
 padding:105px 0;
 }
 
+
 /* =========================
    BUTTON
 ========================= */
@@ -77,6 +78,8 @@ text-transform:uppercase;
 border-radius:2px;
 transition:.35s ease;
 box-shadow:0 10px 35px rgba(212,175,55,.12);
+border:none;
+cursor:pointer;
 }
 
 .btn:hover{
@@ -84,6 +87,7 @@ background:var(--gold-soft);
 transform:translateY(-4px);
 box-shadow:0 15px 40px rgba(212,175,55,.22);
 }
+
 
 /* =========================
    NAV
@@ -135,6 +139,7 @@ transition:.3s;
 color:var(--gold);
 }
 
+
 /* =========================
    HERO
 ========================= */
@@ -165,8 +170,6 @@ background-size:cover;
 background-position:center top;
 }
 
-/* theatrical vignette */
-
 .hero::before{
 content:"";
 position:absolute;
@@ -179,8 +182,6 @@ rgba(0,0,0,.55) 100%
 );
 pointer-events:none;
 }
-
-/* subtle spotlight */
 
 .hero::after{
 content:"";
@@ -247,8 +248,9 @@ color:#ccc;
 color:var(--gold);
 }
 
+
 /* =========================
-   INTRO / MAN BEHIND MIC
+   INTRO
 ========================= */
 
 .intro{
@@ -298,8 +300,9 @@ color:var(--cream);
 color:var(--gold);
 }
 
+
 /* =========================
-   CREDITS / STATS
+   STATS
 ========================= */
 
 .stats{
@@ -336,6 +339,7 @@ letter-spacing:2px;
 text-transform:uppercase;
 color:#888;
 }
+
 
 /* =========================
    ABOUT
@@ -401,8 +405,9 @@ font-size:.94rem;
 margin-top:8px;
 }
 
+
 /* =========================
-   PERFORMANCE / SERVICES
+   PERFORMANCE
 ========================= */
 
 .performance{
@@ -470,8 +475,9 @@ color:#999;
 font-size:.86rem;
 }
 
+
 /* =========================
-   THE STAGE / GALLERY
+   GALLERY
 ========================= */
 
 .gallery-section{
@@ -553,6 +559,7 @@ text-align:center;
 margin-top:50px;
 }
 
+
 /* =========================
    TESTIMONIALS
 ========================= */
@@ -612,6 +619,7 @@ text-transform:uppercase;
 color:var(--gold);
 }
 
+
 /* =========================
    FINAL CTA
 ========================= */
@@ -661,6 +669,7 @@ box-shadow:none;
 background:#1a1a1a;
 }
 
+
 /* =========================
    CONTACT
 ========================= */
@@ -696,6 +705,174 @@ font-weight:600;
 letter-spacing:.5px;
 }
 
+
+/* =========================
+   BOOKING MODAL
+========================= */
+
+.booking-modal{
+position:fixed;
+inset:0;
+z-index:2000;
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+background:rgba(0,0,0,.82);
+backdrop-filter:blur(12px);
+}
+
+.booking-modal.active{
+display:flex;
+}
+
+.booking-box{
+width:100%;
+max-width:560px;
+max-height:90vh;
+overflow-y:auto;
+background:#111;
+border:1px solid var(--line);
+box-shadow:0 30px 100px rgba(0,0,0,.7);
+padding:42px 35px;
+position:relative;
+}
+
+.booking-close{
+position:absolute;
+top:16px;
+right:20px;
+background:none;
+border:none;
+color:#aaa;
+font-size:1.8rem;
+cursor:pointer;
+line-height:1;
+}
+
+.booking-close:hover{
+color:var(--gold);
+}
+
+.booking-kicker{
+font-size:.65rem;
+letter-spacing:3px;
+text-transform:uppercase;
+color:var(--gold);
+margin-bottom:12px;
+}
+
+.booking-box h2{
+font-size:2.3rem;
+margin-bottom:8px;
+}
+
+.booking-subtitle{
+font-size:.82rem;
+color:#888;
+margin-bottom:30px;
+}
+
+.booking-section{
+margin-bottom:28px;
+}
+
+.booking-label{
+display:block;
+font-size:.68rem;
+letter-spacing:1.8px;
+text-transform:uppercase;
+color:#aaa;
+margin-bottom:12px;
+}
+
+.booking-options{
+display:grid;
+gap:10px;
+}
+
+.booking-option{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:17px 18px;
+border:1px solid rgba(255,255,255,.09);
+background:#0b0b0b;
+cursor:pointer;
+transition:.25s ease;
+}
+
+.booking-option:hover{
+border-color:rgba(212,175,55,.5);
+}
+
+.booking-option.selected{
+border-color:var(--gold);
+background:rgba(212,175,55,.07);
+}
+
+.booking-option-left{
+display:flex;
+align-items:center;
+gap:13px;
+}
+
+.booking-option input{
+accent-color:var(--gold);
+width:16px;
+height:16px;
+}
+
+.booking-option-name{
+font-size:.82rem;
+font-weight:600;
+color:#eee;
+}
+
+.booking-option-price{
+font-family:'Playfair Display',serif;
+font-size:1rem;
+color:var(--gold);
+white-space:nowrap;
+}
+
+.booking-select,
+.booking-date{
+width:100%;
+padding:16px;
+background:#0b0b0b;
+border:1px solid rgba(255,255,255,.1);
+color:#eee;
+font-family:'Montserrat',sans-serif;
+font-size:.82rem;
+outline:none;
+}
+
+.booking-select:focus,
+.booking-date:focus{
+border-color:var(--gold);
+}
+
+.booking-date{
+color-scheme:dark;
+}
+
+.booking-submit{
+width:100%;
+border:none;
+cursor:pointer;
+margin-top:5px;
+}
+
+.booking-note{
+text-align:center;
+font-size:.65rem;
+color:#666;
+margin-top:15px;
+line-height:1.5;
+}
+
+
 /* =========================
    FOOTER
 ========================= */
@@ -709,6 +886,7 @@ color:#666;
 font-size:.72rem;
 letter-spacing:.5px;
 }
+
 
 /* =========================
    RESPONSIVE
@@ -729,6 +907,7 @@ grid-template-columns:1fr;
 }
 
 }
+
 
 @media(max-width:768px){
 
@@ -853,7 +1032,28 @@ font-size:2.5rem;
 padding:40px 22px;
 }
 
+.booking-box{
+padding:35px 22px;
 }
+
+.booking-box h2{
+font-size:2rem;
+}
+
+.booking-option{
+padding:15px;
+}
+
+.booking-option-name{
+font-size:.76rem;
+}
+
+.booking-option-price{
+font-size:.9rem;
+}
+
+}
+
 
 @media(max-width:420px){
 
@@ -890,7 +1090,9 @@ font-size:2.2rem;
 <body>
 
 
-<!-- NAVIGATION -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
 
@@ -914,7 +1116,9 @@ Shobatainment
 </nav>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
@@ -935,9 +1139,13 @@ Your Event Deserves a
 Siphamandla Shoba brings charisma, command and connection to every stage — turning events into experiences audiences remember.
 </p>
 
-<a class="btn"
-href="https://wa.me/27796804821">
+<a
+class="btn"
+href="#"
+onclick="openBooking(); return false;">
+
 Book Siphamandla
+
 </a>
 
 <div class="hero-note">
@@ -951,7 +1159,9 @@ Every audience deserves <span>a performance</span> they'll remember.
 </section>
 
 
-<!-- THE MAN BEHIND THE MIC -->
+<!-- =========================
+     INTRO
+========================= -->
 
 <section class="intro">
 
@@ -982,7 +1192,9 @@ A commanding presence, an engaging storyteller and a host who understands that e
 </section>
 
 
-<!-- CREDITS -->
+<!-- =========================
+     CREDITS
+========================= -->
 
 <section class="stats">
 
@@ -1017,7 +1229,9 @@ A commanding presence, an engaging storyteller and a host who understands that e
 </section>
 
 
-<!-- ABOUT -->
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section class="about" id="about">
 
@@ -1033,7 +1247,6 @@ alt="Siphamandla Shoba">
 
 </div>
 
-</div>
 
 <div>
 
@@ -1057,9 +1270,13 @@ With extensive experience hosting corporate functions, awards ceremonies, weddin
 Whether hosting an intimate celebration or commanding a large crowd, he ensures every programme runs smoothly while keeping guests entertained from beginning to end.
 </p>
 
-<a class="btn"
-href="https://wa.me/27796804821">
+<a
+class="btn"
+href="#"
+onclick="openBooking(); return false;">
+
 Check Availability
+
 </a>
 
 </div>
@@ -1071,7 +1288,9 @@ Check Availability
 </section>
 
 
-<!-- PERFORMANCE -->
+<!-- =========================
+     PERFORMANCE
+========================= -->
 
 <section class="performance" id="performance">
 
@@ -1092,6 +1311,7 @@ From intimate celebrations to major productions, Siphamandla brings the energy, 
 </p>
 
 </div>
+
 
 <div class="services-grid">
 
@@ -1169,7 +1389,9 @@ Birthdays, anniversaries, community celebrations, fundraisers and special occasi
 </section>
 
 
-<!-- THE STAGE -->
+<!-- =========================
+     THE STAGE
+========================= -->
 
 <section class="gallery-section" id="gallery">
 
@@ -1191,13 +1413,22 @@ A glimpse into the events, audiences and stages that have shaped the Shoba-tainm
 
 </div>
 
-<div id="galleryContainer" class="event-gallery"></div>
+
+<div
+id="galleryContainer"
+class="event-gallery">
+</div>
+
 
 <div class="gallery-cta">
 
-<a class="btn"
-href="https://wa.me/27796804821">
+<a
+class="btn"
+href="#"
+onclick="openBooking(); return false;">
+
 Book Siphamandla Shoba
+
 </a>
 
 </div>
@@ -1207,7 +1438,9 @@ Book Siphamandla Shoba
 </section>
 
 
-<!-- TESTIMONIALS -->
+<!-- =========================
+     TESTIMONIALS
+========================= -->
 
 <section class="testimonials">
 
@@ -1224,6 +1457,7 @@ Words <span>After The Applause</span>
 </h2>
 
 </div>
+
 
 <div class="testimonial-grid">
 
@@ -1284,7 +1518,9 @@ Wedding Client
 </section>
 
 
-<!-- FINAL CTA -->
+<!-- =========================
+     FINAL CTA
+========================= -->
 
 <section class="cta">
 
@@ -1298,9 +1534,13 @@ Ready To Take The Stage?
 Give your audience an experience they'll talk about long after the lights go down.
 </p>
 
-<a class="btn"
-href="https://wa.me/27796804821">
+<a
+class="btn"
+href="#"
+onclick="openBooking(); return false;">
+
 Book Via WhatsApp
+
 </a>
 
 </div>
@@ -1308,7 +1548,9 @@ Book Via WhatsApp
 </section>
 
 
-<!-- CONTACT -->
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section class="contact" id="contact">
 
@@ -1334,9 +1576,13 @@ WhatsApp Available 7 Days A Week
 
 <br>
 
-<a class="btn"
-href="https://wa.me/27796804821?text=Hello%20I%20would%20like%20to%20book%20Siphamandla%20Shoba">
+<a
+class="btn"
+href="#"
+onclick="openBooking(); return false;">
+
 Message On WhatsApp
+
 </a>
 
 </div>
@@ -1346,7 +1592,228 @@ Message On WhatsApp
 </section>
 
 
-<!-- GALLERY SCRIPT -->
+<!-- =========================
+     BOOKING MODAL
+========================= -->
+
+<div
+class="booking-modal"
+id="bookingModal">
+
+<div class="booking-box">
+
+
+<button
+class="booking-close"
+onclick="closeBooking()"
+aria-label="Close booking form">
+
+×
+
+</button>
+
+
+<div class="booking-kicker">
+Book Siphamandla Shoba
+</div>
+
+<h2>
+Let's Plan Your Event
+</h2>
+
+<p class="booking-subtitle">
+Select your MC package, event type and date. Your enquiry will be sent directly to WhatsApp.
+</p>
+
+
+<!-- MC PACKAGE -->
+
+<div class="booking-section">
+
+<label class="booking-label">
+MC Package
+</label>
+
+
+<div class="booking-options">
+
+
+<label class="booking-option">
+
+<div class="booking-option-left">
+
+<input
+type="radio"
+name="mcPackage"
+value="30 Minutes"
+data-price="R5,000">
+
+<span class="booking-option-name">
+30 Minutes
+</span>
+
+</div>
+
+<span class="booking-option-price">
+R5,000
+</span>
+
+</label>
+
+
+<label class="booking-option">
+
+<div class="booking-option-left">
+
+<input
+type="radio"
+name="mcPackage"
+value="1 Hour"
+data-price="R10,000">
+
+<span class="booking-option-name">
+1 Hour
+</span>
+
+</div>
+
+<span class="booking-option-price">
+R10,000
+</span>
+
+</label>
+
+
+<label class="booking-option">
+
+<div class="booking-option-left">
+
+<input
+type="radio"
+name="mcPackage"
+value="All Day"
+data-price="R20,000+">
+
+<span class="booking-option-name">
+All Day
+</span>
+
+</div>
+
+<span class="booking-option-price">
+R20,000+
+</span>
+
+</label>
+
+
+</div>
+
+</div>
+
+
+<!-- EVENT TYPE -->
+
+<div class="booking-section">
+
+<label
+class="booking-label"
+for="eventType">
+
+Event Type
+
+</label>
+
+
+<select
+id="eventType"
+class="booking-select">
+
+<option value="">
+Select event type
+</option>
+
+<option>
+Corporate Event
+</option>
+
+<option>
+Wedding
+</option>
+
+<option>
+Birthday / Private Event
+</option>
+
+<option>
+Festival / Concert
+</option>
+
+<option>
+Awards Ceremony
+</option>
+
+<option>
+Product Launch
+</option>
+
+<option>
+Community Event
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+</div>
+
+
+<!-- EVENT DATE -->
+
+<div class="booking-section">
+
+<label
+class="booking-label"
+for="eventDate">
+
+Event Date
+
+</label>
+
+<input
+type="date"
+id="eventDate"
+class="booking-date">
+
+</div>
+
+
+<!-- SUBMIT -->
+
+<button
+class="btn booking-submit"
+onclick="sendBooking()">
+
+Continue To WhatsApp
+
+</button>
+
+
+<p class="booking-note">
+Your selection will be included in your WhatsApp enquiry. Final pricing and availability will be confirmed by the booking team.
+</p>
+
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     GALLERY SCRIPT
+========================= -->
 
 <script>
 
@@ -1413,14 +1880,216 @@ container.innerHTML =
 
 loadGallery();
 
+
+/* =========================
+   BOOKING MODAL
+========================= */
+
+function openBooking(){
+
+document
+.getElementById('bookingModal')
+.classList.add('active');
+
+document.body.style.overflow='hidden';
+
+}
+
+
+function closeBooking(){
+
+document
+.getElementById('bookingModal')
+.classList.remove('active');
+
+document.body.style.overflow='';
+
+}
+
+
+/* =========================
+   PACKAGE SELECTION
+========================= */
+
+document
+.querySelectorAll('.booking-option input')
+.forEach(input => {
+
+input.addEventListener('change',function(){
+
+document
+.querySelectorAll('.booking-option')
+.forEach(option => {
+
+option.classList.remove('selected');
+
+});
+
+this
+.closest('.booking-option')
+.classList.add('selected');
+
+});
+
+});
+
+
+/* =========================
+   CLOSE WHEN CLICKING
+   OUTSIDE MODAL
+========================= */
+
+document
+.getElementById('bookingModal')
+.addEventListener('click',function(event){
+
+if(event.target === this){
+
+closeBooking();
+
+}
+
+});
+
+
+/* =========================
+   ESCAPE KEY
+========================= */
+
+document.addEventListener('keydown',function(event){
+
+if(event.key === 'Escape'){
+
+closeBooking();
+
+}
+
+});
+
+
+/* =========================
+   SEND BOOKING TO WHATSAPP
+========================= */
+
+function sendBooking(){
+
+const selectedPackage =
+document.querySelector(
+'input[name="mcPackage"]:checked'
+);
+
+const eventType =
+document.getElementById('eventType').value;
+
+const eventDate =
+document.getElementById('eventDate').value;
+
+
+if(!selectedPackage){
+
+alert('Please select an MC package.');
+
+return;
+
+}
+
+
+if(!eventType){
+
+alert('Please select an event type.');
+
+return;
+
+}
+
+
+if(!eventDate){
+
+alert('Please select your event date.');
+
+return;
+
+}
+
+
+/* Format date */
+
+const dateObject =
+new Date(eventDate + 'T00:00:00');
+
+const formattedDate =
+dateObject.toLocaleDateString(
+'en-ZA',
+{
+day:'numeric',
+month:'long',
+year:'numeric'
+}
+);
+
+
+const packageName =
+selectedPackage.value;
+
+const price =
+selectedPackage.dataset.price;
+
+
+/* WhatsApp message */
+
+const message =
+
+`Hello Siphamandla 👋
+
+I would like to enquire about booking you for:
+
+🎤 MC PACKAGE
+${packageName}
+
+💰 PRICE
+${price}
+
+🎉 EVENT TYPE
+${eventType}
+
+📅 EVENT DATE
+${formattedDate}
+
+Please let me know if you are available and how we can proceed with the booking.
+
+Thank you.`;
+
+
+/* WhatsApp URL */
+
+const whatsappURL =
+'https://wa.me/27796804821?text='
++
+encodeURIComponent(message);
+
+
+/* Open WhatsApp */
+
+window.open(
+whatsappURL,
+'_blank'
+);
+
+}
+
 </script>
 
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
 © 2026 Shoba-tainment. All Rights Reserved.
 
 </footer>
+
 
 </body>
 </html>
