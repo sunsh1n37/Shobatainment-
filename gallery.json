@@ -1,0 +1,63 @@
+[
+  {
+    "title": "Dr Goge's Graduation Celebration",
+    "date": "13 June 2026",
+    "venue": "Folweni",
+    "images": [
+      "images/goge1.jpg",
+      "images/goge2.jpg",
+      "images/goge3.jpg",
+      "images/goge4.jpg",
+      "images/goge.mp4"
+    ]
+  },
+  {
+    "title": "Madolo's Music Video",
+    "date": "12 June 2026",
+    "venue": "Amaoti",
+    "images": [
+      "images/madolo1.jpg",
+      "images/madolo2.jpg",
+      "images/madolo3.jpg",
+      "images/madolo4.jpg",
+      "images/madolo5.jpg"
+    ]
+  },
+  {
+    "title": "Clive's Wedding",
+    "date": "22 December 2025",
+    "venue": "Inanda",
+    "images": [
+      "images/clive1.jpg",
+      "images/clive2.jpg",
+      "images/clive3.jpg",
+      "images/clive4.jpg",
+      "images/clive5.jpg"
+    ]
+  },
+  {
+    "title": "Graduation",
+    "date": "2 March 2025",
+    "venue": "Umhlanga",
+    "images": [
+      "images/graduation1.jpg",
+      "images/graduation2.jpg",
+      "images/graduation3.jpg",
+      "images/graduation4.jpg",
+      "images/graduation5.jpg",
+      "images/graduation6.jpg"
+    ]
+  },
+  {
+    "title": "Wedding 2",
+    "date": "05 December 2025",
+    "venue": "Durban",
+    "images": [
+      "images/wedding1.jpg",
+      "images/wedding2.jpg",
+      "images/wedding3.jpg",
+      "images/wedding4.jpg",
+      "images/wedding5.jpg"
+    ]
+  }
+]
