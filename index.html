@@ -4,18 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>[MC NAME] | Professional MC & Entertainer</title>
+<title>Siphamandla Shoba | MC • Host • Entertainer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
 --gold:#D4AF37;
---dark:#0f0f0f;
---card:#171717;
---text:#ffffff;
---grey:#bdbdbd;
+--gold-soft:#eadb9b;
+--black:#070707;
+--dark:#0d0d0d;
+--card:#141414;
+--cream:#f3efe5;
+--muted:#a9a9a9;
+--line:rgba(212,175,55,.22);
 }
 
 *{
@@ -27,91 +30,104 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Montserrat',sans-serif;
-background:var(--dark);
-color:white;
-overflow-x:hidden;
+background:var(--black);
+color:#fff;
 line-height:1.7;
+overflow-x:hidden;
 }
 
 h1,h2,h3{
 font-family:'Playfair Display',serif;
+line-height:1.15;
 }
 
 a{
 text-decoration:none;
+color:inherit;
 }
 
 img{
-max-width:100%;
 display:block;
+max-width:100%;
 }
 
 .container{
 width:90%;
-max-width:1200px;
+max-width:1180px;
 margin:auto;
 }
 
 section{
-padding:90px 0;
+padding:105px 0;
 }
+
+/* =========================
+   BUTTON
+========================= */
 
 .btn{
 display:inline-block;
-padding:15px 30px;
+padding:16px 34px;
 background:var(--gold);
-color:black;
+color:#080808;
+font-size:.78rem;
 font-weight:700;
-border-radius:50px;
-transition:.3s;
+letter-spacing:1.5px;
+text-transform:uppercase;
+border-radius:2px;
+transition:.35s ease;
+box-shadow:0 10px 35px rgba(212,175,55,.12);
 }
 
 .btn:hover{
+background:var(--gold-soft);
 transform:translateY(-4px);
+box-shadow:0 15px 40px rgba(212,175,55,.22);
 }
 
-.section-title{
-text-align:center;
-margin-bottom:60px;
-font-size:2.8rem;
-}
-
-.gold{
-color:var(--gold);
-}
-
-/* NAVIGATION */
+/* =========================
+   NAV
+========================= */
 
 nav{
 position:fixed;
 top:0;
+left:0;
 width:100%;
 z-index:999;
-background:rgba(0,0,0,.95);
-backdrop-filter:blur(10px);
+background:rgba(5,5,5,.92);
+backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(255,255,255,.05);
 }
 
 .nav-inner{
+position:relative;
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:center;
 padding:20px 5%;
 }
 
 .logo{
-font-size:1.6rem;
+font-family:'Playfair Display',serif;
+font-size:3rem;
 font-weight:700;
 color:var(--gold);
+letter-spacing:.5px;
+text-align:center;
 }
 
 .nav-links{
 display:flex;
-gap:25px;
+gap:30px;
 }
 
 .nav-links a{
-color:white;
+font-size:.72rem;
 font-weight:500;
+letter-spacing:1.2px;
+text-transform:uppercase;
+color:#ddd;
 transition:.3s;
 }
 
@@ -119,120 +135,368 @@ transition:.3s;
 color:var(--gold);
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
-height:100vh;
-background:
-linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.6)),
-url("https://i.ibb.co/93rR1MSF/file-00000000f5f471f49860e50f7c96c4c8.png");
-background-size:cover;
-background-position:center top;
+min-height:100vh;
 display:flex;
 align-items:center;
 text-align:center;
+position:relative;
+overflow:hidden;
+
+background:
+linear-gradient(
+90deg,
+rgba(0,0,0,.58),
+rgba(0,0,0,.18),
+rgba(0,0,0,.65)
+),
+linear-gradient(
+180deg,
+rgba(0,0,0,.2),
+rgba(0,0,0,.82)
+),
+url("https://i.ibb.co/93rR1MSF/file-00000000f5f471f49860e50f7c96c4c8.png");
+
+background-size:cover;
+background-position:center top;
+}
+
+/* theatrical vignette */
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(
+circle at center,
+transparent 25%,
+rgba(0,0,0,.55) 100%
+);
+pointer-events:none;
+}
+
+/* subtle spotlight */
+
+.hero::after{
+content:"";
+position:absolute;
+width:650px;
+height:650px;
+top:-300px;
+left:50%;
+transform:translateX(-50%);
+background:radial-gradient(
+circle,
+rgba(212,175,55,.12),
+transparent 65%
+);
+pointer-events:none;
 }
 
 .hero-content{
-max-width:900px;
+position:relative;
+z-index:2;
+max-width:920px;
+margin:auto;
+padding-top:60px;
+}
+
+.eyebrow{
+font-size:.7rem;
+font-weight:600;
+letter-spacing:4px;
+text-transform:uppercase;
+color:var(--gold-soft);
+margin-bottom:25px;
 }
 
 .hero h1{
-font-size:4rem;
-margin-bottom:20px;
+font-size:clamp(3rem,7vw,6rem);
+font-weight:600;
+margin-bottom:28px;
+text-shadow:0 10px 35px rgba(0,0,0,.65);
 }
 
-.hero span{
+.hero h1 span{
+display:block;
 color:var(--gold);
+font-style:italic;
 }
 
 .hero p{
-font-size:1.2rem;
+max-width:720px;
+margin:0 auto 35px;
+font-size:1rem;
 color:#ddd;
-margin-bottom:35px;
 }
 
-/* STATS */
+.hero-note{
+margin-top:25px;
+font-family:'Playfair Display',serif;
+font-size:1rem;
+font-style:italic;
+color:#ccc;
+}
+
+.hero-note span{
+color:var(--gold);
+}
+
+/* =========================
+   INTRO / MAN BEHIND MIC
+========================= */
+
+.intro{
+background:var(--dark);
+text-align:center;
+padding:75px 0;
+border-bottom:1px solid rgba(255,255,255,.04);
+}
+
+.intro-inner{
+max-width:760px;
+margin:auto;
+}
+
+.intro-label{
+font-size:.68rem;
+letter-spacing:3px;
+text-transform:uppercase;
+color:var(--gold);
+margin-bottom:20px;
+}
+
+.intro h2{
+font-size:2.8rem;
+margin-bottom:20px;
+}
+
+.intro h2 span{
+color:var(--gold);
+}
+
+.intro p{
+color:#aaa;
+font-size:.95rem;
+}
+
+.intro-quote{
+margin-top:28px;
+font-family:'Playfair Display',serif;
+font-size:1.35rem;
+font-style:italic;
+color:var(--cream);
+}
+
+.intro-quote::before,
+.intro-quote::after{
+color:var(--gold);
+}
+
+/* =========================
+   CREDITS / STATS
+========================= */
 
 .stats{
-background:black;
+background:#050505;
+padding:65px 0;
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);
 }
 
 .stats-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+grid-template-columns:repeat(4,1fr);
+}
+
+.stat{
 text-align:center;
+padding:15px 20px;
+border-right:1px solid rgba(255,255,255,.08);
+}
+
+.stat:last-child{
+border-right:none;
 }
 
 .stat h2{
 font-size:3rem;
 color:var(--gold);
+margin-bottom:4px;
 }
 
 .stat p{
-color:#ccc;
+font-size:.68rem;
+letter-spacing:2px;
+text-transform:uppercase;
+color:#888;
 }
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+background:var(--black);
+}
 
 .about-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:50px;
+gap:75px;
 align-items:center;
 }
 
-.about img{
+.about-image{
+position:relative;
+}
+
+.about-image img{
 width:100%;
-border-radius:20px;
+max-height:620px;
+object-fit:cover;
+filter:saturate(.82);
 }
 
-/* SERVICES */
-
-.services-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+.about-image::after{
+content:"";
+position:absolute;
+top:18px;
+left:18px;
+right:-18px;
+bottom:-18px;
+border:1px solid var(--line);
+z-index:-1;
 }
 
-.card{
-background:var(--card);
-padding:30px;
-border-radius:20px;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-.card h3{
+.section-kicker{
+font-size:.68rem;
+letter-spacing:3px;
+text-transform:uppercase;
 color:var(--gold);
+margin-bottom:18px;
+}
+
+.about h2{
+font-size:3.1rem;
+margin-bottom:25px;
+}
+
+.about h2 span{
+color:var(--gold);
+}
+
+.about p{
+color:#aaa;
+margin-bottom:20px;
+font-size:.94rem;
+}
+
+.about .btn{
+margin-top:8px;
+}
+
+/* =========================
+   PERFORMANCE / SERVICES
+========================= */
+
+.performance{
+background:
+linear-gradient(rgba(0,0,0,.96),rgba(0,0,0,.96)),
+url("https://i.ibb.co/93rR1MSF/file-00000000f5f471f49860e50f7c96c4c8.png");
+
+background-size:cover;
+background-position:center;
+}
+
+.performance-heading{
+text-align:center;
+max-width:700px;
+margin:0 auto 55px;
+}
+
+.performance-heading h2{
+font-size:3.2rem;
 margin-bottom:15px;
 }
 
-/* SHOWREEL */
+.performance-heading h2 span{
+color:var(--gold);
+}
 
-.showreel{
+.performance-heading p{
+color:#999;
+font-size:.9rem;
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:1px;
+background:rgba(212,175,55,.18);
+}
+
+.card{
+background:#101010;
+padding:38px 28px;
+min-height:250px;
+position:relative;
+transition:.35s ease;
+}
+
+.card:hover{
+background:#181818;
+}
+
+.card-number{
+font-family:'Playfair Display',serif;
+font-size:1rem;
+color:var(--gold);
+margin-bottom:25px;
+}
+
+.card h3{
+font-size:1.45rem;
+margin-bottom:15px;
+}
+
+.card p{
+color:#999;
+font-size:.86rem;
+}
+
+/* =========================
+   THE STAGE / GALLERY
+========================= */
+
+.gallery-section{
 background:#090909;
+}
+
+.gallery-heading{
 text-align:center;
+margin-bottom:55px;
 }
 
-.video-container{
-max-width:900px;
-margin:auto;
-aspect-ratio:16/9;
+.gallery-heading h2{
+font-size:3.3rem;
+margin-bottom:12px;
 }
 
-.video-container iframe{
-width:100%;
-height:100%;
-border:none;
-border-radius:20px;
+.gallery-heading h2 span{
+color:var(--gold);
+font-style:italic;
 }
 
-/* EVENTS PORTFOLIO */
+.gallery-heading p{
+color:#888;
+font-size:.85rem;
+}
 
 .event-gallery{
 display:flex;
@@ -241,140 +505,336 @@ gap:40px;
 }
 
 .event-card{
-background:var(--card);
+background:#111;
 padding:25px;
-border-radius:20px;
+border:1px solid rgba(255,255,255,.06);
 }
 
 .event-header{
-border-left:4px solid var(--gold);
-padding-left:15px;
-margin-bottom:20px;
+border-left:3px solid var(--gold);
+padding-left:17px;
+margin-bottom:25px;
 }
 
 .event-header h3{
-color:var(--gold);
-margin-bottom:8px;
+font-size:1.6rem;
+color:var(--cream);
+margin-bottom:6px;
 }
 
 .event-date{
-color:#bdbdbd;
-font-size:.95rem;
+font-size:.7rem;
+letter-spacing:1.5px;
+text-transform:uppercase;
+color:#777;
 }
 
 .event-images{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
+gap:12px;
 }
 
 .event-images img{
 width:100%;
-height:250px;
+height:270px;
 object-fit:cover;
-border-radius:12px;
-transition:.3s;
+filter:saturate(.88);
+transition:.4s ease;
 }
 
 .event-images img:hover{
-transform:scale(1.03);
+filter:saturate(1);
+transform:scale(1.02);
 }
 
-/* TESTIMONIALS */
+.gallery-cta{
+text-align:center;
+margin-top:50px;
+}
+
+/* =========================
+   TESTIMONIALS
+========================= */
 
 .testimonials{
-background:black;
+background:#050505;
+}
+
+.testimonial-heading{
+text-align:center;
+margin-bottom:50px;
+}
+
+.testimonial-heading h2{
+font-size:3rem;
+}
+
+.testimonial-heading span{
+color:var(--gold);
 }
 
 .testimonial-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
 }
 
 .quote{
-background:var(--card);
-padding:30px;
-border-left:4px solid var(--gold);
-border-radius:10px;
+padding:35px;
+background:#111;
+border-top:2px solid var(--gold);
+position:relative;
 }
 
-/* CTA */
-
-.cta{
-background:linear-gradient(135deg,#D4AF37,#b89020);
-text-align:center;
-color:black;
-}
-
-.cta h2{
-font-size:3rem;
+.quote-mark{
+font-family:Georgia,serif;
+font-size:4rem;
+line-height:.5;
+color:var(--gold);
+opacity:.5;
 margin-bottom:20px;
 }
 
-/* CONTACT */
+.quote p{
+font-family:'Playfair Display',serif;
+font-size:1.05rem;
+font-style:italic;
+color:#ddd;
+}
+
+.quote strong{
+display:block;
+margin-top:22px;
+font-size:.68rem;
+letter-spacing:1.5px;
+text-transform:uppercase;
+color:var(--gold);
+}
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.cta{
+background:
+linear-gradient(
+135deg,
+#d4af37,
+#b89020
+);
+color:#080808;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.cta::before{
+content:"";
+position:absolute;
+width:400px;
+height:400px;
+border:1px solid rgba(0,0,0,.12);
+border-radius:50%;
+top:-200px;
+left:-100px;
+}
+
+.cta h2{
+font-size:3.5rem;
+margin-bottom:18px;
+}
+
+.cta p{
+max-width:650px;
+margin:0 auto 30px;
+font-size:.9rem;
+}
+
+.cta .btn{
+background:#080808;
+color:white;
+box-shadow:none;
+}
+
+.cta .btn:hover{
+background:#1a1a1a;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+background:var(--dark);
+}
 
 .contact-box{
-background:var(--card);
-padding:40px;
-border-radius:20px;
-max-width:700px;
+max-width:720px;
 margin:auto;
 text-align:center;
+padding:55px 35px;
+border:1px solid var(--line);
+background:#111;
 }
 
 .contact-box h3{
+font-size:2rem;
 color:var(--gold);
-margin-bottom:15px;
+margin-bottom:18px;
 }
 
 .contact-box p{
-margin-bottom:15px;
+color:#999;
+font-size:.9rem;
+margin-bottom:12px;
 }
 
-/* FOOTER */
+.contact-box .availability{
+color:#eee;
+font-weight:600;
+letter-spacing:.5px;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-background:black;
+background:#030303;
+border-top:1px solid rgba(255,255,255,.05);
 padding:30px;
 text-align:center;
-color:#999;
+color:#666;
+font-size:.72rem;
+letter-spacing:.5px;
 }
 
-/* MOBILE */
+/* =========================
+   RESPONSIVE
+========================= */
 
-@media(max-width:768px){
+@media(max-width:950px){
 
-.hero{
-padding-top:100px;
-}
-
-.hero h1{
-font-size:2.5rem;
-}
-
-.hero p{
-font-size:1rem;
-}
-
-.section-title{
-font-size:2rem;
+.services-grid{
+grid-template-columns:repeat(2,1fr);
 }
 
 .about-grid{
+gap:45px;
+}
+
+.testimonial-grid{
 grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:768px){
+
+section{
+padding:75px 0;
+}
+
+.container{
+width:92%;
+}
+
+.nav-inner{
+padding:16px 4%;
 }
 
 .nav-links{
 display:none;
 }
 
-.cta h2{
-font-size:2rem;
+.logo{
+font-size:2.5rem;
+}
+
+.hero{
+min-height:100svh;
+padding:120px 0 70px;
+background-position:center top;
+}
+
+.hero h1{
+font-size:clamp(2.6rem,12vw,4rem);
+}
+
+.hero p{
+font-size:.88rem;
+}
+
+.eyebrow{
+font-size:.58rem;
+letter-spacing:2.5px;
+}
+
+.intro{
+padding:65px 0;
+}
+
+.intro h2{
+font-size:2.2rem;
+}
+
+.intro-quote{
+font-size:1.15rem;
+}
+
+.stats-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.stat{
+border-right:none;
+border-bottom:1px solid rgba(255,255,255,.07);
+padding:25px 10px;
+}
+
+.stat:nth-child(odd){
+border-right:1px solid rgba(255,255,255,.07);
+}
+
+.stat:nth-last-child(-n+2){
+border-bottom:none;
 }
 
 .stat h2{
-font-size:2.2rem;
+font-size:2.3rem;
+}
+
+.about-grid{
+grid-template-columns:1fr;
+}
+
+.about h2{
+font-size:2.5rem;
+}
+
+.about-image::after{
+right:-10px;
+bottom:-10px;
+}
+
+.performance-heading h2,
+.gallery-heading h2,
+.testimonial-heading h2{
+font-size:2.5rem;
+}
+
+.services-grid{
+grid-template-columns:1fr;
+}
+
+.card{
+min-height:auto;
+padding:30px 25px;
+}
+
+.event-card{
+padding:18px;
 }
 
 .event-images{
@@ -382,49 +842,147 @@ grid-template-columns:1fr;
 }
 
 .event-images img{
-height:220px;
+height:280px;
 }
+
+.cta h2{
+font-size:2.5rem;
 }
+
+.contact-box{
+padding:40px 22px;
+}
+
+}
+
+@media(max-width:420px){
+
+.hero h1{
+font-size:2.45rem;
+}
+
+.hero p{
+font-size:.82rem;
+}
+
+.btn{
+padding:15px 25px;
+font-size:.7rem;
+}
+
+.section-kicker{
+font-size:.6rem;
+}
+
+.about h2{
+font-size:2.2rem;
+}
+
+.cta h2{
+font-size:2.2rem;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
+
+<!-- NAVIGATION -->
+
 <nav>
+
 <div class="nav-inner">
 
-<div class="logo">Shoba-tainment</div>
+<div class="logo">
+Shobatainment
+</div>
 
 <div class="nav-links">
+
 <a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#gallery">Portfolio</a>
+<a href="#performance">The Performance</a>
+<a href="#gallery">The Stage</a>
 <a href="#contact">Book Me</a>
+
 </div>
 
 </div>
+
 </nav>
+
+
+<!-- HERO -->
 
 <section class="hero">
 
+<div class="container">
+
 <div class="hero-content">
 
+<div class="eyebrow">
+Master of Ceremonies • Host • Entertainer
+</div>
+
 <h1>
-Your Event Deserves a <span>World-Class Host</span>
+Your Event Deserves a
+<span>World-Class Host</span>
 </h1>
 
 <p>
-Siphamandla Shoba delivers professional event hosting, audience engagement and unforgettable entertainment experiences through Shoba-tainment.
+Siphamandla Shoba brings charisma, command and connection to every stage — turning events into experiences audiences remember.
 </p>
 
 <a class="btn"
 href="https://wa.me/27796804821">
-BOOK NOW
+Book Siphamandla
 </a>
+
+<div class="hero-note">
+Every audience deserves <span>a performance</span> they'll remember.
+</div>
+
+</div>
 
 </div>
 
 </section>
+
+
+<!-- THE MAN BEHIND THE MIC -->
+
+<section class="intro">
+
+<div class="container">
+
+<div class="intro-inner">
+
+<div class="intro-label">
+The Man Behind the Mic
+</div>
+
+<h2>
+More Than an <span>MC</span>
+</h2>
+
+<p>
+A commanding presence, an engaging storyteller and a host who understands that every room has its own energy.
+</p>
+
+<div class="intro-quote">
+“Every event has a story. I make sure the audience remembers it.”
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CREDITS -->
 
 <section class="stats">
 
@@ -439,7 +997,7 @@ BOOK NOW
 
 <div class="stat">
 <h2>15+</h2>
-<p>Years Experience</p>
+<p>Years On Stage</p>
 </div>
 
 <div class="stat">
@@ -449,7 +1007,7 @@ BOOK NOW
 
 <div class="stat">
 <h2>50K+</h2>
-<p>Audience Members Entertained</p>
+<p>Audience Members</p>
 </div>
 
 </div>
@@ -457,36 +1015,51 @@ BOOK NOW
 </div>
 
 </section>
+
+
+<!-- ABOUT -->
 
 <section class="about" id="about">
 
 <div class="container">
 
-<h2 class="section-title">
-Meet <span class="gold">Siphamandla Shoba</span>
-</h2>
-
 <div class="about-grid">
 
-<img src="siphamandla-shoba.jpg" alt="Siphamandla Shoba">
+<div class="about-image">
+
+<img
+src="https://i.ibb.co/67rffLPg/IMG-20260808-WA0015.jpg"
+alt="Siphamandla Shoba">
+
+</div>
+
+</div>
 
 <div>
 
-<p style="margin-bottom:20px;">
+<div class="section-kicker">
+The Performer
+</div>
+
+<h2>
+Meet <span>Siphamandla Shoba</span>
+</h2>
+
+<p>
 Siphamandla Shoba is the founder of Shoba-tainment and a dynamic Master of Ceremonies known for bringing energy, professionalism and charisma to every stage.
 </p>
 
-<p style="margin-bottom:20px;">
+<p>
 With extensive experience hosting corporate functions, awards ceremonies, weddings, community events, product launches and entertainment showcases, Siphamandla has built a reputation for engaging audiences and creating memorable event experiences.
 </p>
 
-<p style="margin-bottom:20px;">
+<p>
 Whether hosting an intimate celebration or commanding a large crowd, he ensures every programme runs smoothly while keeping guests entertained from beginning to end.
 </p>
 
 <a class="btn"
 href="https://wa.me/27796804821">
-CHECK AVAILABILITY
+Check Availability
 </a>
 
 </div>
@@ -497,34 +1070,96 @@ CHECK AVAILABILITY
 
 </section>
 
-<section id="services">
+
+<!-- PERFORMANCE -->
+
+<section class="performance" id="performance">
 
 <div class="container">
 
-<h2 class="section-title">
-Services
+<div class="performance-heading">
+
+<div class="section-kicker">
+The Performance
+</div>
+
+<h2>
+Every Room Has a <span>Stage</span>
 </h2>
+
+<p>
+From intimate celebrations to major productions, Siphamandla brings the energy, timing and presence required to own the room.
+</p>
+
+</div>
 
 <div class="services-grid">
 
 <div class="card">
-<h3>Corporate Events</h3>
-<p>Conferences, gala dinners, awards ceremonies, product launches and executive functions.</p>
+
+<div class="card-number">
+01
 </div>
 
-<div class="card">
-<h3>Weddings</h3>
-<p>Elegant and engaging hosting for memorable wedding celebrations.</p>
+<h3>
+Corporate Events
+</h3>
+
+<p>
+Conferences, gala dinners, awards ceremonies, product launches and executive functions.
+</p>
+
 </div>
 
-<div class="card">
-<h3>Festivals & Concerts</h3>
-<p>High-energy crowd engagement, artist introductions and live entertainment hosting.</p>
-</div>
 
 <div class="card">
-<h3>Community & Private Events</h3>
-<p>Birthdays, anniversaries, celebrations, fundraisers and special occasions.</p>
+
+<div class="card-number">
+02
+</div>
+
+<h3>
+Weddings
+</h3>
+
+<p>
+Elegant, engaging and memorable hosting for celebrations where every moment matters.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-number">
+03
+</div>
+
+<h3>
+Festivals & Concerts
+</h3>
+
+<p>
+High-energy crowd engagement, artist introductions and live entertainment hosting.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-number">
+04
+</div>
+
+<h3>
+Private Events
+</h3>
+
+<p>
+Birthdays, anniversaries, community celebrations, fundraisers and special occasions.
+</p>
+
 </div>
 
 </div>
@@ -533,88 +1168,113 @@ Services
 
 </section>
 
-<section class="showreel">
+
+<!-- THE STAGE -->
+
+<section class="gallery-section" id="gallery">
 
 <div class="container">
 
-<h2 class="section-title">
-Showreel
-</h2>
+<div class="gallery-heading">
 
-<div class="video-container">
-
-<iframe
-src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-allowfullscreen>
-</iframe>
-
+<div class="section-kicker">
+The Stage
 </div>
 
-<br><br>
+<h2>
+Moments <span>In The Spotlight</span>
+</h2>
 
-<a class="btn"
-href="https://wa.me/27796804821">
-BOOK THIS EXPERIENCE
-</a>
+<p>
+A glimpse into the events, audiences and stages that have shaped the Shoba-tainment experience.
+</p>
 
 </div>
-
-</section>
-<section id="gallery">
-
-<div class="container">
-
-<h2 class="section-title">
-Events Portfolio
-</h2>
 
 <div id="galleryContainer" class="event-gallery"></div>
 
-<br><br>
+<div class="gallery-cta">
 
-<div style="text-align:center;">
 <a class="btn"
 href="https://wa.me/27796804821">
-BOOK SIPHAMANDLA SHOBA
+Book Siphamandla Shoba
 </a>
+
 </div>
 
 </div>
 
 </section>
+
+
+<!-- TESTIMONIALS -->
 
 <section class="testimonials">
 
 <div class="container">
 
-<h2 class="section-title">
-Client Testimonials
+<div class="testimonial-heading">
+
+<div class="section-kicker">
+From The Audience
+</div>
+
+<h2>
+Words <span>After The Applause</span>
 </h2>
+
+</div>
 
 <div class="testimonial-grid">
 
 <div class="quote">
-<p>
-"Professional, charismatic and absolutely exceptional. Our event ran flawlessly."
-</p>
-<br>
-<strong>Corporate Client</strong>
+
+<div class="quote-mark">
+“
 </div>
 
-<div class="quote">
 <p>
-"The best MC we have worked with. Engaging, organised and energetic."
+Professional, charismatic and absolutely exceptional. Our event ran flawlessly.
 </p>
-<br>
-<strong>Event Planner</strong>
+
+<strong>
+Corporate Client
+</strong>
+
 </div>
 
+
 <div class="quote">
+
+<div class="quote-mark">
+“
+</div>
+
 <p>
-"Our guests are still talking about the event months later. Highly recommended."
+The best MC we have worked with. Engaging, organised and energetic.
 </p>
-<br>
-<strong>Wedding Client</strong>
+
+<strong>
+Event Planner
+</strong>
+
+</div>
+
+
+<div class="quote">
+
+<div class="quote-mark">
+“
+</div>
+
+<p>
+Our guests are still talking about the event months later. Highly recommended.
+</p>
+
+<strong>
+Wedding Client
+</strong>
+
 </div>
 
 </div>
@@ -622,45 +1282,53 @@ Client Testimonials
 </div>
 
 </section>
+
+
+<!-- FINAL CTA -->
 
 <section class="cta">
 
 <div class="container">
 
 <h2>
-Ready To Elevate Your Event?
+Ready To Take The Stage?
 </h2>
 
-<p style="margin-bottom:30px;">
-Partner with Shoba-tainment and give your audience an unforgettable experience.
+<p>
+Give your audience an experience they'll talk about long after the lights go down.
 </p>
 
 <a class="btn"
 href="https://wa.me/27796804821">
-BOOK VIA WHATSAPP
+Book Via WhatsApp
 </a>
 
 </div>
 
 </section>
 
-<section id="contact">
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
 
 <div class="container">
 
-<h2 class="section-title">
-Book Siphamandla Shoba
-</h2>
-
 <div class="contact-box">
 
-<h3>Bookings & Enquiries</h3>
+<div class="section-kicker">
+Bookings
+</div>
+
+<h3>
+Bring Siphamandla To Your Stage
+</h3>
 
 <p>
 For bookings, availability, quotations and event enquiries, contact our Personal Assistant directly.
 </p>
 
-<p>
+<p class="availability">
 WhatsApp Available 7 Days A Week
 </p>
 
@@ -668,7 +1336,7 @@ WhatsApp Available 7 Days A Week
 
 <a class="btn"
 href="https://wa.me/27796804821?text=Hello%20I%20would%20like%20to%20book%20Siphamandla%20Shoba">
-MESSAGE ON WHATSAPP
+Message On WhatsApp
 </a>
 
 </div>
@@ -677,39 +1345,81 @@ MESSAGE ON WHATSAPP
 
 </section>
 
+
+<!-- GALLERY SCRIPT -->
+
 <script>
-async function loadGallery() {
-  const container = document.getElementById('galleryContainer');
-  
-  try {
-    const res = await fetch('gallery.json');
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    
-    const events = await res.json();
-    
-    container.innerHTML = events.map(event => `
-      <div class="event-card">
-        <div class="event-header">
-          <h3>${event.title}</h3>
-          <div class="event-date">${event.date} • ${event.venue}</div>
-        </div>
-        <div class="event-images">
-          ${event.images.map(img => `<img src="${img}" alt="${event.title}">`).join('')}
-        </div>
-      </div>
-    `).join('');
-    
-  } catch (err) {
-    console.error('Gallery failed:', err);
-    container.innerHTML = '<p style="text-align:center;color:red;">Could not load gallery. Check console for error.</p>';
-  }
+
+async function loadGallery(){
+
+const container =
+document.getElementById('galleryContainer');
+
+try{
+
+const res =
+await fetch('gallery.json');
+
+if(!res.ok)
+throw new Error(`HTTP ${res.status}`);
+
+const events =
+await res.json();
+
+container.innerHTML =
+events.map(event => `
+
+<div class="event-card">
+
+<div class="event-header">
+
+<h3>
+${event.title}
+</h3>
+
+<div class="event-date">
+${event.date} • ${event.venue}
+</div>
+
+</div>
+
+<div class="event-images">
+
+${event.images.map(img => `
+
+<img
+src="${img}"
+alt="${event.title}"
+loading="lazy">
+
+`).join('')}
+
+</div>
+
+</div>
+
+`).join('');
+
+}catch(err){
+
+console.error('Gallery failed:',err);
+
+container.innerHTML =
+'<p style="text-align:center;color:#D4AF37;">Portfolio temporarily unavailable.</p>';
+
+}
+
 }
 
 loadGallery();
+
 </script>
 
+
 <footer>
+
 © 2026 Shoba-tainment. All Rights Reserved.
+
 </footer>
 
 </body>
